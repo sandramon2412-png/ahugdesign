@@ -110,7 +110,7 @@ function HomePage() {
         </div>
 
         <div
-          className="absolute bottom-9 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2.5 animate-fade-up"
+          className="hero-scroll absolute bottom-9 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2.5 animate-fade-up"
           style={{ animationDelay: "1.6s" }}
         >
           <div
