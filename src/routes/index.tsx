@@ -32,7 +32,7 @@ function HomePage() {
       {/* HERO */}
       <section className="relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover hero-video"
           src={heroVideo}
           autoPlay
           muted
@@ -54,11 +54,11 @@ function HomePage() {
           <h1
             className="font-script animate-fade-up"
             style={{
-              fontSize: "clamp(64px, 10vw, 140px)",
+              fontSize: "clamp(48px, 11vw, 140px)",
               lineHeight: 1,
               color: "var(--cream-white)",
               animationDelay: "0.5s",
-              textShadow: "0 8px 30px rgba(0,0,0,0.35)",
+              textShadow: "0 6px 24px rgba(0,0,0,0.45)",
             }}
           >
             A Hug Design
