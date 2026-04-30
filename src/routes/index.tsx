@@ -10,6 +10,8 @@ import etsyMobileImage from "@/assets/etsy-mobile.png";
 import instagramGridImage from "@/assets/instagram-grid.png";
 import packagingFlatlayImage from "@/assets/packaging-flatlay.png";
 import packagingDetailsImage from "@/assets/packaging-details.png";
+import packagingRitual2Image from "@/assets/packaging-ritual-2.png";
+import packagingRitual3Image from "@/assets/packaging-ritual-3.png";
 
 
 export const Route = createFileRoute("/")({
@@ -367,13 +369,31 @@ function HomePage() {
             Ribbons, labels, wax seals and finishing touches are chosen with the same care as the piece itself.
           </p>
         </div>
-        <div className="reveal reveal-d2 mx-auto max-w-5xl overflow-hidden rounded-3xl shadow-card">
-          <img
-            src={packagingFlatlayImage}
-            alt="A Hug Design packaging materials laid out on a wooden table with ribbon, labels, boxes and seal stamp"
-            className="block h-auto w-full"
-            loading="lazy"
-          />
+        <div className="reveal reveal-d2 mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="overflow-hidden rounded-2xl shadow-card">
+            <img
+              src={packagingFlatlayImage}
+              alt="A Hug Design packaging materials laid out on a wooden table with ribbon, labels, boxes and seal stamp"
+              className="block aspect-square h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-card">
+            <img
+              src={packagingRitual2Image}
+              alt="Kraft envelope with A Hug Design logo surrounded by twine-tied thank you notes, ribbons and washi tape"
+              className="block aspect-square h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-card">
+            <img
+              src={packagingRitual3Image}
+              alt="Flatlay of kraft gift boxes, eucalyptus, twine, wax seal and scissors on a wooden table"
+              className="block aspect-square h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
