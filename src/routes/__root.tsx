@@ -1,22 +1,31 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Toaster } from "sonner";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
 
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div
+      className="flex min-h-screen items-center justify-center px-4"
+      style={{ background: "var(--cream)" }}
+    >
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <h1 className="font-display text-7xl" style={{ color: "var(--espresso)" }}>404</h1>
+        <h2 className="mt-4 font-display text-2xl italic" style={{ color: "var(--sage-dark)" }}>
+          This page got lost in the garden
+        </h2>
+        <p className="mt-3 text-sm" style={{ color: "var(--umber)" }}>
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-white transition-all hover:-translate-y-px"
+            style={{ background: "var(--terra)" }}
           >
-            Go home
+            ← Back home
           </Link>
         </div>
       </div>
@@ -29,19 +38,28 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "A Hug Design · Designs That Feel Like a Hug" },
+      {
+        name: "description",
+        content:
+          "Woman-owned studio crafting tote bags, apparel and gifts that feel like an embrace. Every design begins with intention.",
+      },
+      { name: "author", content: "A Hug Design" },
+      { property: "og:title", content: "A Hug Design · Designs That Feel Like a Hug" },
+      {
+        property: "og:description",
+        content: "Tote bags, apparel and personalized gifts designed to celebrate the moments that matter.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Dancing+Script:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap",
       },
     ],
   }),
@@ -65,5 +83,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
+      <Toaster position="top-center" richColors />
+    </>
+  );
 }
