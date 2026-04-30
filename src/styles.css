@@ -114,9 +114,10 @@
   /* Effects */
   --gradient-hero-overlay: linear-gradient(
     to bottom,
-    oklch(0.25 0.018 50 / 0.65) 0%,
-    oklch(0.25 0.018 50 / 0.45) 45%,
-    oklch(0.25 0.018 50 / 0.55) 100%
+    oklch(0.22 0.018 50 / 0.35) 0%,
+    oklch(0.22 0.018 50 / 0.15) 35%,
+    oklch(0.22 0.018 50 / 0.15) 65%,
+    oklch(0.22 0.018 50 / 0.55) 100%
   );
   --gradient-final-cta: linear-gradient(135deg, var(--sage-dark) 0%, var(--terra) 100%);
   --shadow-soft: 0 10px 40px -12px oklch(0.30 0.018 50 / 0.18);
