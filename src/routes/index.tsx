@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,10 +30,15 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
-        <PlaceholderImage
-          label="Hero · video or photo"
-          gradient="linear-gradient(160deg, var(--sage-dark) 0%, var(--sage) 50%, var(--terra) 100%)"
-          className="absolute inset-0"
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster=""
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
         <div className="absolute inset-0 bg-grain opacity-[0.06]" />
@@ -44,12 +50,12 @@ function HomePage() {
           >
             Woman-Owned · Est. 2023
           </p>
-          <h1
-            className="font-script text-white animate-fade-up"
-            style={{ fontSize: "clamp(64px, 10vw, 120px)", lineHeight: 1, animationDelay: "0.5s" }}
-          >
-            A Hug Design
-          </h1>
+          <img
+            src={logo}
+            alt="A Hug Design"
+            className="animate-fade-up h-auto w-[clamp(260px,38vw,460px)] drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+            style={{ animationDelay: "0.5s" }}
+          />
           <div
             className="flex items-center gap-3.5 animate-fade-up text-sm"
             style={{ color: "rgba(245,240,232,0.5)", animationDelay: "0.7s" }}
