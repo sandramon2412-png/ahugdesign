@@ -129,7 +129,7 @@ function HomePage() {
 
       {/* BRAND PROMISE */}
       <section className="relative overflow-hidden px-6 py-24 md:px-12">
-        <div className="absolute inset-0 bg-botanical opacity-50" />
+        <div className="absolute inset-0 bg-botanical opacity-50 rounded-sm" />
         <div className="relative mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-[1fr_1px_1fr_1px_1fr] md:gap-0">
           <BPColumn
             icon={
