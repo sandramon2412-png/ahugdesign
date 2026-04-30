@@ -31,7 +31,7 @@ export function BotanicalDivider({ variant = "simple", className = "" }: Props) 
     );
   }
   return (
-    <div className={`flex items-center justify-center py-8 ${className}`}>
+    <div className={`flex items-center justify-center py-8 opacity-90 ${className}`}>
       <svg width="320" height="32" viewBox="0 0 320 32" fill="none" className="opacity-60">
         <line x1="0" y1="16" x2="118" y2="16" stroke="var(--sage)" strokeWidth="1" strokeDasharray="3 5" />
         <path d="M128 16 Q134 8 140 16 Q146 24 152 16" stroke="var(--sage)" strokeWidth="1.2" fill="none" />
