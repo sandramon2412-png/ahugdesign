@@ -30,10 +30,10 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-section relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
+      <section className="hero-section relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden" style={{ background: "oklch(0.22 0.018 50)" }}>
         <div className="hero-video-wrap absolute inset-0">
           <video
-            className="hero-video absolute inset-0 h-full w-full object-cover"
+            className="hero-video absolute inset-0 h-full w-full object-contain"
             src={heroVideo}
             autoPlay
             muted
