@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
-import logo from "@/assets/logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
