@@ -114,10 +114,9 @@
   /* Effects */
   --gradient-hero-overlay: linear-gradient(
     to bottom,
-    oklch(0.30 0.018 50 / 0.55) 0%,
-    transparent 40%,
-    transparent 60%,
-    oklch(0.30 0.018 50 / 0.65) 100%
+    oklch(0.25 0.018 50 / 0.65) 0%,
+    oklch(0.25 0.018 50 / 0.45) 45%,
+    oklch(0.25 0.018 50 / 0.55) 100%
   );
   --gradient-final-cta: linear-gradient(135deg, var(--sage-dark) 0%, var(--terra) 100%);
   --shadow-soft: 0 10px 40px -12px oklch(0.30 0.018 50 / 0.18);
@@ -250,4 +249,11 @@
     60% { transform: translateY(10px); opacity: 0; }
   }
   .animate-scroll-dot { animation: scroll-dot 2s ease-in-out infinite; }
+}
+
+@media (max-width: 768px) {
+  .hero-video {
+    filter: blur(2px) saturate(0.95);
+    transform: scale(1.05);
+  }
 }
