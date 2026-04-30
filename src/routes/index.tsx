@@ -30,21 +30,23 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover hero-video"
-          src={heroVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster=""
-        />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
-        <div className="absolute inset-0 bg-grain opacity-[0.06]" />
+      <section className="hero-section relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
+        <div className="hero-video-wrap absolute inset-0">
+          <video
+            className="hero-video absolute inset-0 h-full w-full object-cover"
+            src={heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster=""
+          />
+        </div>
+        <div className="hero-overlay absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
+        <div className="hero-overlay absolute inset-0 bg-grain opacity-[0.06]" />
 
-        <div className="relative z-10 flex flex-col items-center gap-5 px-6 text-center">
+        <div className="hero-content relative z-10 flex flex-col items-center gap-5 px-6 text-center">
           <p
             className="animate-fade-up text-[10px] font-medium uppercase tracking-[0.32em]"
             style={{ color: "rgba(245,240,232,0.7)", animationDelay: "0.3s" }}
@@ -52,7 +54,7 @@ function HomePage() {
             Woman-Owned · Est. 2023
           </p>
           <h1
-            className="font-script animate-fade-up"
+            className="hero-title font-script animate-fade-up"
             style={{
               fontSize: "clamp(48px, 11vw, 140px)",
               lineHeight: 1,
