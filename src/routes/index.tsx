@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
+import heroVideo from "@/assets/hero.mp4?url";
 
 
 export const Route = createFileRoute("/")({
