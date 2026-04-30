@@ -3,6 +3,8 @@ import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
 import heroVideo from "@/assets/hero.mp4?url";
+import processVideo from "@/assets/process.mp4?url";
+import ourStoryImage from "@/assets/our-story.png";
 
 
 export const Route = createFileRoute("/")({
@@ -175,10 +177,11 @@ function HomePage() {
       {/* STORY */}
       <section className="grid min-h-[600px] md:grid-cols-2" id="story">
         <div className="reveal relative min-h-[420px] overflow-hidden">
-          <PlaceholderImage
-            label="Sandra · founder portrait"
-            gradient="linear-gradient(160deg, var(--sage) 0%, var(--sage-light) 100%)"
-            className="absolute inset-0"
+          <img
+            src={ourStoryImage}
+            alt="Sandra · founder portrait — A Hug Design"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
           />
         </div>
         <div
@@ -266,9 +269,14 @@ function HomePage() {
           className="reveal reveal-d2 mx-auto mb-16 aspect-video max-w-3xl overflow-hidden rounded-2xl"
           style={{ border: "1.5px solid color-mix(in oklab, var(--sage) 35%, transparent)" }}
         >
-          <PlaceholderImage
-            label="Process · video"
-            gradient="linear-gradient(160deg, var(--sage-dark) 0%, var(--espresso) 100%)"
+          <video
+            className="h-full w-full object-cover"
+            src={processVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
         </div>
 
