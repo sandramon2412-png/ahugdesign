@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const NAV_LINKS = [
   { to: "/about", label: "Our Story" },
@@ -35,7 +36,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
         <Link to="/" className="group flex items-center gap-3">
           <div
-            className="flex size-11 items-center justify-center rounded-full transition-transform group-hover:scale-105"
+            className="flex size-12 items-center justify-center overflow-hidden rounded-full transition-transform group-hover:scale-105"
             style={{
               background: scrolled
                 ? "color-mix(in oklab, var(--cream) 15%, transparent)"
@@ -43,13 +44,7 @@ export function Navbar() {
               border: `1.5px solid ${scrolled ? "color-mix(in oklab, var(--cream) 35%, transparent)" : "color-mix(in oklab, var(--sage) 50%, transparent)"}`,
             }}
           >
-            <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
-              <path
-                d="M18 30 C18 30 8 22 8 14 C8 9 12 6 18 8 C24 6 28 9 28 14 C28 22 18 30 18 30Z"
-                fill={scrolled ? "var(--blush)" : "var(--terra)"}
-                opacity=".9"
-              />
-            </svg>
+            <img src={logo} alt="A Hug Design" className="h-full w-full object-cover" />
           </div>
           <span
             className="font-script text-2xl leading-none transition-colors"
