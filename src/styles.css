@@ -283,6 +283,14 @@
     color: var(--espresso) !important;
     text-shadow: none !important;
   }
+  .hero-content a[href="/about"] {
+    color: var(--espresso) !important;
+    border-color: color-mix(in oklab, var(--espresso) 35%, transparent) !important;
+    background: transparent !important;
+  }
+  .hero-content .hero-divider span {
+    background: color-mix(in oklab, var(--espresso) 35%, transparent) !important;
+  }
   .hero-scroll {
     display: none;
   }
