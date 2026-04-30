@@ -33,7 +33,7 @@ function HomePage() {
       <section className="relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/hero.mp4"
+          src={heroVideo}
           autoPlay
           muted
           loop
