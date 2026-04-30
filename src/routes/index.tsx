@@ -5,6 +5,9 @@ import { PlaceholderImage } from "@/components/site/PlaceholderImage";
 import heroVideo from "@/assets/hero.mp4?url";
 import processVideo from "@/assets/process.mp4?url";
 import ourStoryImage from "@/assets/our-story.png";
+import studioShelvesImage from "@/assets/studio-shelves.png";
+import etsyMobileImage from "@/assets/etsy-mobile.png";
+import instagramGridImage from "@/assets/instagram-grid.png";
 
 
 export const Route = createFileRoute("/")({
