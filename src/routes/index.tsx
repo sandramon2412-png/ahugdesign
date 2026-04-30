@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
-import { PlaceholderImage } from "@/components/site/PlaceholderImage";
+
 import heroVideo from "@/assets/hero.mp4?url";
 import processVideo from "@/assets/process.mp4?url";
 import ourStoryImage from "@/assets/our-story.png";
+import studioShelvesImage from "@/assets/studio-shelves.png";
+import etsyMobileImage from "@/assets/etsy-mobile.png";
+import instagramGridImage from "@/assets/instagram-grid.png";
 
 
 export const Route = createFileRoute("/")({
@@ -310,6 +313,42 @@ function HomePage() {
         </div>
       </section>
 
+      {/* THE STUDIO — physical shelves */}
+      <section className="grid items-stretch md:grid-cols-2">
+        <div
+          className="reveal flex flex-col justify-center px-8 py-20 md:px-16"
+          style={{ background: "var(--linen)" }}
+        >
+          <p
+            className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--sage)" }}
+          >
+            Inside the Studio
+          </p>
+          <h2
+            className="mb-5 font-display"
+            style={{ fontSize: "clamp(30px, 3.5vw, 46px)", lineHeight: 1.1, color: "var(--espresso)" }}
+          >
+            A small space, <em className="italic">big intention</em>
+          </h2>
+          <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Our studio is where every tote, tee, mug and cap is folded, tagged and packed by hand. Sage greens, warm
+            linens and terracotta accents — the same palette you'll find in every piece we send out the door.
+          </p>
+          <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Small shelves, slow rhythms, and a lot of natural light.
+          </p>
+        </div>
+        <div className="reveal reveal-d2 relative min-h-[360px] overflow-hidden">
+          <img
+            src={studioShelvesImage}
+            alt="A Hug Design studio shelves with folded apparel, mugs, totes and caps"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* COLLECTIONS */}
       <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream-white)" }} id="collections">
         <div className="reveal mx-auto mb-14 max-w-xl text-center">
@@ -364,22 +403,86 @@ function HomePage() {
         </div>
       </section>
 
-      {/* GALLERY (bento) */}
-      <section className="bg-cream">
-        <div
-          className="grid gap-1.5"
-          style={{
-            gridTemplateColumns: "repeat(12, 1fr)",
-            gridAutoRows: "minmax(180px, 220px)",
-          }}
+      {/* SHOP ON ETSY — mobile lifestyle */}
+      <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream)" }}>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+          <div className="reveal relative aspect-square overflow-hidden rounded-3xl shadow-card">
+            <img
+              src={etsyMobileImage}
+              alt="Browsing the A Hug Design Etsy shop on a phone over a coffee table"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="reveal reveal-d2">
+            <p
+              className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em]"
+              style={{ color: "var(--terra)" }}
+            >
+              Shop on the go
+            </p>
+            <h2
+              className="mb-5 font-display"
+              style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1.05, color: "var(--espresso)" }}
+            >
+              Find us on <em className="italic">Etsy</em>
+            </h2>
+            <p className="mb-7 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+              The full collection lives on our Etsy shop — browse, favorite and check out securely from anywhere. Every
+              order is wrapped by hand and shipped with intention.
+            </p>
+            <a
+              href="https://www.etsy.com/shop/AHugDesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-soft transition-all hover:-translate-y-0.5"
+              style={{ background: "var(--terra)" }}
+            >
+              Open the Etsy Shop →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOLLOW THE STUDIO — Instagram grid */}
+      <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream-white)" }}>
+        <div className="reveal mx-auto mb-12 max-w-xl text-center">
+          <p
+            className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--sage)" }}
+          >
+            Follow the Studio
+          </p>
+          <h2 className="mb-4 font-display" style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1 }}>
+            A peek at our <em className="italic">@ahugdesign</em>
+          </h2>
+          <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Botanicals, mood boards and the little moments behind every collection.
+          </p>
+        </div>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="reveal reveal-d2 group mx-auto block max-w-5xl overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1"
         >
-          <BentoCell area="1 / 1 / 4 / 6" label="Packaging with Purpose" tone="var(--sage)" />
-          <BentoCell area="1 / 6 / 2 / 9" label="Every Detail Intentional" tone="var(--terra)" />
-          <BentoCell area="1 / 9 / 2 / 13" label="Made with Hands" tone="var(--sage-light)" />
-          <BentoCell area="2 / 6 / 4 / 9" label="A Studio Note" tone="var(--umber)" />
-          <BentoCell area="2 / 9 / 3 / 11" label="Linen & Cream" tone="var(--blush)" />
-          <BentoCell area="2 / 11 / 3 / 13" label="Sun-Soaked" tone="var(--beige)" />
-          <BentoCell area="3 / 9 / 4 / 13" label="Behind the Scenes" tone="var(--sage-dark)" />
+          <img
+            src={instagramGridImage}
+            alt="Instagram mood board grid for A Hug Design — botanicals, totes, stickers and brand quotes"
+            className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </a>
+        <div className="mt-8 text-center">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all hover:-translate-y-px"
+            style={{ borderColor: "color-mix(in oklab, var(--sage) 50%, transparent)", color: "var(--sage-dark)" }}
+          >
+            Follow @ahugdesign →
+          </a>
         </div>
       </section>
 
@@ -567,22 +670,3 @@ function CollectionCard({
   );
 }
 
-function BentoCell({ area, label, tone }: { area: string; label: string; tone: string }) {
-  return (
-    <div className="group relative overflow-hidden" style={{ gridArea: area }}>
-      <PlaceholderImage
-        label={label}
-        gradient={`linear-gradient(160deg, ${tone} 0%, color-mix(in oklab, ${tone} 60%, white) 100%)`}
-        className="size-full transition-transform duration-700 group-hover:scale-105"
-      />
-      <div
-        className="absolute inset-0 flex items-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: `linear-gradient(to top, color-mix(in oklab, ${tone} 80%, transparent), transparent)` }}
-      >
-        <span className="font-display italic text-white" style={{ fontSize: 16 }}>
-          {label}
-        </span>
-      </div>
-    </div>
-  );
-}
