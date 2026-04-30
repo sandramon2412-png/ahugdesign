@@ -50,12 +50,18 @@ function HomePage() {
           >
             Woman-Owned · Est. 2023
           </p>
-          <img
-            src={logo}
-            alt="A Hug Design"
-            className="animate-fade-up h-auto w-[clamp(260px,38vw,460px)] drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
-            style={{ animationDelay: "0.5s" }}
-          />
+          <h1
+            className="font-script animate-fade-up"
+            style={{
+              fontSize: "clamp(64px, 10vw, 140px)",
+              lineHeight: 1,
+              color: "var(--cream-white)",
+              animationDelay: "0.5s",
+              textShadow: "0 8px 30px rgba(0,0,0,0.35)",
+            }}
+          >
+            A Hug Design
+          </h1>
           <div
             className="flex items-center gap-3.5 animate-fade-up text-sm"
             style={{ color: "rgba(245,240,232,0.5)", animationDelay: "0.7s" }}
