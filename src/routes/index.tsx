@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,10 +30,15 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden">
-        <PlaceholderImage
-          label="Hero · video or photo"
-          gradient="linear-gradient(160deg, var(--sage-dark) 0%, var(--sage) 50%, var(--terra) 100%)"
-          className="absolute inset-0"
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster=""
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
         <div className="absolute inset-0 bg-grain opacity-[0.06]" />
