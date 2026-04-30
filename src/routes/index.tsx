@@ -313,6 +313,42 @@ function HomePage() {
         </div>
       </section>
 
+      {/* THE STUDIO — physical shelves */}
+      <section className="grid items-stretch md:grid-cols-2">
+        <div
+          className="reveal flex flex-col justify-center px-8 py-20 md:px-16"
+          style={{ background: "var(--linen)" }}
+        >
+          <p
+            className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--sage)" }}
+          >
+            Inside the Studio
+          </p>
+          <h2
+            className="mb-5 font-display"
+            style={{ fontSize: "clamp(30px, 3.5vw, 46px)", lineHeight: 1.1, color: "var(--espresso)" }}
+          >
+            A small space, <em className="italic">big intention</em>
+          </h2>
+          <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Our studio is where every tote, tee, mug and cap is folded, tagged and packed by hand. Sage greens, warm
+            linens and terracotta accents — the same palette you'll find in every piece we send out the door.
+          </p>
+          <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Small shelves, slow rhythms, and a lot of natural light.
+          </p>
+        </div>
+        <div className="reveal reveal-d2 relative min-h-[360px] overflow-hidden">
+          <img
+            src={studioShelvesImage}
+            alt="A Hug Design studio shelves with folded apparel, mugs, totes and caps"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* COLLECTIONS */}
       <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream-white)" }} id="collections">
         <div className="reveal mx-auto mb-14 max-w-xl text-center">
