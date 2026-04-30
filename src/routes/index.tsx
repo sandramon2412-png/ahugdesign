@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
-import { PlaceholderImage } from "@/components/site/PlaceholderImage";
+
 import heroVideo from "@/assets/hero.mp4?url";
 import processVideo from "@/assets/process.mp4?url";
 import ourStoryImage from "@/assets/our-story.png";
@@ -670,22 +670,3 @@ function CollectionCard({
   );
 }
 
-function BentoCell({ area, label, tone }: { area: string; label: string; tone: string }) {
-  return (
-    <div className="group relative overflow-hidden" style={{ gridArea: area }}>
-      <PlaceholderImage
-        label={label}
-        gradient={`linear-gradient(160deg, ${tone} 0%, color-mix(in oklab, ${tone} 60%, white) 100%)`}
-        className="size-full transition-transform duration-700 group-hover:scale-105"
-      />
-      <div
-        className="absolute inset-0 flex items-end p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: `linear-gradient(to top, color-mix(in oklab, ${tone} 80%, transparent), transparent)` }}
-      >
-        <span className="font-display italic text-white" style={{ fontSize: 16 }}>
-          {label}
-        </span>
-      </div>
-    </div>
-  );
-}
