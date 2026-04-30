@@ -6,7 +6,7 @@ type Props = {
 export function BotanicalDivider({ variant = "simple", className = "" }: Props) {
   if (variant === "ornate") {
     return (
-      <div className={`flex items-center justify-center py-8 ${className}`}>
+      <div className={`flex items-center justify-center py-8 opacity-90 ${className}`}>
         <svg width="400" height="40" viewBox="0 0 400 40" fill="none" className="opacity-60">
           <line x1="0" y1="20" x2="150" y2="20" stroke="var(--sage)" strokeWidth=".8" strokeDasharray="2 6" />
           <path d="M155 20 C160 10 165 8 170 12 C165 16 160 20 155 20Z" fill="var(--sage-light)" opacity=".7" />
