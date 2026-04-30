@@ -253,7 +253,8 @@
 
 @media (max-width: 768px) {
   .hero-video {
-    filter: blur(2px) saturate(0.95);
-    transform: scale(1.05);
+    object-fit: contain !important;
+    background: oklch(0.22 0.018 50);
   }
 }
+
