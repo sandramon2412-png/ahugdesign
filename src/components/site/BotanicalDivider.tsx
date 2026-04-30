@@ -3,78 +3,97 @@ type Props = {
   className?: string;
 };
 
-function OrbitMark({ size = 120 }: { size?: number }) {
+function LeafDivider({ width = 540 }: { width?: number }) {
+  const h = 60;
+  const cx = 270;
+  const cy = 30;
   return (
     <svg
-      width={size}
-      height={size * 1.5}
-      viewBox="0 0 120 180"
+      width={width}
+      height={h}
+      viewBox={`0 0 540 ${h}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Vertical dashed line */}
+      {/* Left dotted line */}
       <line
-        x1="60"
-        y1="0"
-        x2="60"
-        y2="180"
-        stroke="var(--sage)"
-        strokeWidth="1.2"
-        strokeDasharray="4 6"
+        x1="20"
+        y1={cy}
+        x2="220"
+        y2={cy}
+        stroke="var(--terra)"
+        strokeWidth="1.4"
+        strokeDasharray="1.5 8"
+        strokeLinecap="round"
         opacity="0.85"
       />
-      {/* Top circle */}
+      {/* Right dotted line */}
+      <line
+        x1="320"
+        y1={cy}
+        x2="520"
+        y2={cy}
+        stroke="var(--terra)"
+        strokeWidth="1.4"
+        strokeDasharray="1.5 8"
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+
+      {/* Left leaf */}
+      <g transform={`translate(${cx - 38}, ${cy - 8}) rotate(-25)`} opacity="0.95">
+        <path
+          d="M0 8 Q12 -4 26 2 Q20 12 4 12 Z"
+          fill="var(--sage-light)"
+          stroke="var(--sage)"
+          strokeWidth="0.9"
+        />
+        <path
+          d="M2 10 Q14 4 24 4"
+          stroke="var(--sage-dark)"
+          strokeWidth="0.7"
+          fill="none"
+          opacity="0.7"
+        />
+      </g>
+
+      {/* Right leaf */}
+      <g transform={`translate(${cx + 12}, ${cy - 8}) rotate(25)`} opacity="0.95">
+        <path
+          d="M0 8 Q12 -4 26 2 Q20 12 4 12 Z"
+          fill="var(--sage-light)"
+          stroke="var(--sage)"
+          strokeWidth="0.9"
+        />
+        <path
+          d="M2 10 Q14 4 24 4"
+          stroke="var(--sage-dark)"
+          strokeWidth="0.7"
+          fill="none"
+          opacity="0.7"
+        />
+      </g>
+
+      {/* Center circle */}
       <circle
-        cx="60"
-        cy="50"
-        r="7"
+        cx={cx}
+        cy={cy}
+        r="6"
         fill="none"
-        stroke="var(--sage)"
+        stroke="var(--terra)"
         strokeWidth="1.4"
-        opacity="0.9"
+        opacity="0.95"
       />
-      {/* Bottom circle */}
-      <circle
-        cx="60"
-        cy="130"
-        r="7"
-        fill="none"
-        stroke="var(--sage)"
-        strokeWidth="1.4"
-        opacity="0.9"
-      />
-      {/* Two crossed ellipses (orbit) */}
-      <ellipse
-        cx="60"
-        cy="90"
-        rx="38"
-        ry="42"
-        fill="none"
-        stroke="var(--sage)"
-        strokeWidth="1.4"
-        opacity="0.9"
-        transform="rotate(20 60 90)"
-      />
-      <ellipse
-        cx="60"
-        cy="90"
-        rx="38"
-        ry="42"
-        fill="none"
-        stroke="var(--sage)"
-        strokeWidth="1.4"
-        opacity="0.9"
-        transform="rotate(-20 60 90)"
-      />
+      <circle cx={cx} cy={cy} r="1.6" fill="var(--terra)" />
     </svg>
   );
 }
 
 export function BotanicalDivider({ variant = "simple", className = "" }: Props) {
-  const size = variant === "ornate" ? 140 : variant === "minimal" ? 90 : 120;
+  const width = variant === "ornate" ? 620 : variant === "minimal" ? 420 : 540;
   return (
     <div className={`flex items-center justify-center py-10 ${className}`}>
-      <OrbitMark size={size} />
+      <LeafDivider width={width} />
     </div>
   );
 }
