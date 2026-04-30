@@ -8,6 +8,8 @@ import ourStoryImage from "@/assets/our-story.png";
 import studioShelvesImage from "@/assets/studio-shelves.png";
 import etsyMobileImage from "@/assets/etsy-mobile.png";
 import instagramGridImage from "@/assets/instagram-grid.png";
+import packagingFlatlayImage from "@/assets/packaging-flatlay.png";
+import packagingDetailsImage from "@/assets/packaging-details.png";
 
 
 export const Route = createFileRoute("/")({
@@ -349,6 +351,32 @@ function HomePage() {
         </div>
       </section>
 
+      {/* PACKAGING RITUAL */}
+      <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream)" }}>
+        <div className="reveal mx-auto mb-12 max-w-2xl text-center">
+          <p
+            className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--terra)" }}
+          >
+            Packaging Ritual
+          </p>
+          <h2 className="mb-4 font-display" style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1.05 }}>
+            The details before it <em className="italic">ships</em>
+          </h2>
+          <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Ribbons, labels, wax seals and finishing touches are chosen with the same care as the piece itself.
+          </p>
+        </div>
+        <div className="reveal reveal-d2 mx-auto max-w-5xl overflow-hidden rounded-3xl shadow-card">
+          <img
+            src={packagingFlatlayImage}
+            alt="A Hug Design packaging materials laid out on a wooden table with ribbon, labels, boxes and seal stamp"
+            className="block h-auto w-full"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* COLLECTIONS */}
       <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream-white)" }} id="collections">
         <div className="reveal mx-auto mb-14 max-w-xl text-center">
@@ -483,6 +511,42 @@ function HomePage() {
           >
             Follow @ahugdesign →
           </a>
+        </div>
+      </section>
+
+      {/* WITH EVERY ORDER */}
+      <section className="grid items-stretch md:grid-cols-2">
+        <div className="reveal relative min-h-[360px] overflow-hidden">
+          <img
+            src={packagingDetailsImage}
+            alt="A Hug Design order packaging with thank-you card, tags, stickers and small gift box"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div
+          className="reveal reveal-d2 flex flex-col justify-center px-8 py-20 md:px-16"
+          style={{ background: "var(--linen)" }}
+        >
+          <p
+            className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--sage)" }}
+          >
+            With Every Order
+          </p>
+          <h2
+            className="mb-5 font-display"
+            style={{ fontSize: "clamp(30px, 3.5vw, 46px)", lineHeight: 1.1, color: "var(--espresso)" }}
+          >
+            A thank-you note, a soft wrap, a <em className="italic">little ceremony</em>
+          </h2>
+          <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            We want opening your order to feel personal — tissue, tags, stickers and handwritten warmth, all arranged
+            to feel thoughtful from the very first glance.
+          </p>
+          <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+            Small joys. Big hugs.
+          </p>
         </div>
       </section>
 
