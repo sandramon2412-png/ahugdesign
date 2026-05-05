@@ -111,6 +111,20 @@ function America250Page() {
         </div>
       </section>
 
+      {/* Video showcase */}
+      <section className="px-6 pb-8 md:px-12" style={{ background: "var(--cream)" }}>
+        <div className="reveal mx-auto max-w-5xl overflow-hidden rounded-3xl shadow-card">
+          <video
+            src={america250Video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="block h-full w-full object-cover"
+          />
+        </div>
+      </section>
+
       <BotanicalDivider variant="ornate" />
 
       {/* Product grid */}
