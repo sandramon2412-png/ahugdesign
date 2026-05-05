@@ -52,6 +52,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "A Hug Design · Designs That Feel Like a Hug" },
+      { name: "description", content: "Project Pal is a web application that showcases visual content and designs." },
+      { property: "og:description", content: "Project Pal is a web application that showcases visual content and designs." },
+      { name: "twitter:description", content: "Project Pal is a web application that showcases visual content and designs." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17956a51-84b5-403e-94ad-1e2cc829b8b0/id-preview-f79d7071--f07f9de6-6052-4f66-a9ac-24699458608c.lovable.app-1777940398705.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17956a51-84b5-403e-94ad-1e2cc829b8b0/id-preview-f79d7071--f07f9de6-6052-4f66-a9ac-24699458608c.lovable.app-1777940398705.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
