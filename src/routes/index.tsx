@@ -427,28 +427,36 @@ function HomePage() {
             video={america250Video}
           />
           <CollectionCard
-            tag="Faith & Liberty"
-            name="Faith & Freedom"
-            desc="Designs rooted in faith and liberty"
+            tag="Family · Heirloom"
+            name="Roots & Legacy"
+            desc="Diseños personalizados con apellido familiar"
             comingSoon
-            gradient="linear-gradient(160deg, #4a5e38 0%, var(--sage) 100%)"
+            gradient="linear-gradient(160deg, #8a4a2a 0%, var(--terra) 100%)"
             delay="reveal-d2"
           />
           <CollectionCard
-            tag="Family · Heirloom"
-            name="Family Legacy"
-            desc="Personalized heirlooms for your family story"
+            tag="Faith · Liberty"
+            name="Faith & Freedom"
+            desc="Diseños cristianos + patrióticos"
             comingSoon
-            gradient="linear-gradient(160deg, #8a4a2a 0%, var(--terra) 100%)"
+            gradient="linear-gradient(160deg, #4a5e38 0%, var(--sage) 100%)"
             delay="reveal-d3"
           />
           <CollectionCard
             tag="Birthdays · Milestones"
-            name="Milestone Moments"
-            desc="Celebrating the birthdays that define generations"
+            name="Born to Celebrate"
+            desc="Cumpleaños milestone — 30, 40, 50, 60 años"
             comingSoon
             gradient="linear-gradient(160deg, #2e2218 0%, var(--umber) 100%)"
             delay="reveal-d4"
+          />
+          <CollectionCard
+            tag="Humor · Everyday"
+            name="Good Humor"
+            desc="Diseños graciosos y sarcásticos"
+            comingSoon
+            gradient="linear-gradient(160deg, var(--sage-dark) 0%, var(--sage) 100%)"
+            delay="reveal-d5"
           />
         </div>
       </section>
