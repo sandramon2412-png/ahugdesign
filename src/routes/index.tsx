@@ -757,7 +757,7 @@ function CollectionCard({
     </>
   );
 
-  const className = `reveal ${delay} group relative block aspect-[4/5] overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
+  const className = `reveal ${delay} group relative block ${video ? "aspect-[9/16]" : "aspect-[4/5]"} overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
 
   if (comingSoon) {
     return <div className={className}>{inner}</div>;
