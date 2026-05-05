@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
+import america250Video from "@/assets/america-250.mp4";
 
 const PRODUCTS = [
   { name: "Liberty Tote", desc: "Heavyweight cotton tote · vintage stars print", price: "$32" },
