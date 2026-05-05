@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
-import america250Video from "@/assets/america-250.mp4";
+
 
 const PRODUCTS = [
   { name: "Liberty Tote", desc: "Heavyweight cotton tote · vintage stars print", price: "$32" },
@@ -108,20 +108,6 @@ function America250Page() {
           <p className="text-base font-light leading-relaxed" style={{ color: "var(--umber)" }}>
             Limited quantities. Numbered drops. Wrapped with care, sent with intention.
           </p>
-        </div>
-      </section>
-
-      {/* Video showcase */}
-      <section className="px-6 pb-8 md:px-12" style={{ background: "var(--cream)" }}>
-        <div className="reveal mx-auto max-w-5xl overflow-hidden rounded-3xl shadow-card">
-          <video
-            src={america250Video}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="block h-full w-full object-cover"
-          />
         </div>
       </section>
 

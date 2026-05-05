@@ -12,6 +12,7 @@ import packagingFlatlayImage from "@/assets/packaging-flatlay.png";
 import packagingDetailsImage from "@/assets/packaging-details.png";
 import packagingRitual2Image from "@/assets/packaging-ritual-2.png";
 import packagingRitual3Image from "@/assets/packaging-ritual-3.png";
+import america250Video from "@/assets/america-250.mp4?url";
 
 
 export const Route = createFileRoute("/")({
@@ -423,6 +424,7 @@ function HomePage() {
             cta="Explore Collection →"
             gradient="linear-gradient(160deg, #1a2f5c 0%, #2d4f8a 60%, #3a6faa 100%)"
             delay="reveal-d1"
+            video={america250Video}
           />
           <CollectionCard
             tag="Faith & Liberty"
@@ -676,6 +678,7 @@ function CollectionCard({
   comingSoon = false,
   gradient,
   delay,
+  video,
 }: {
   href?: string;
   internal?: boolean;
@@ -686,10 +689,21 @@ function CollectionCard({
   comingSoon?: boolean;
   gradient: string;
   delay: string;
+  video?: string;
 }) {
   const inner = (
     <>
       <div className="absolute inset-0" style={{ background: gradient }} />
+      {video && (
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
       <div
         className="absolute inset-0"
         style={{
