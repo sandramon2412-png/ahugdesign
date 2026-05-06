@@ -414,7 +414,8 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+        {/* Featured America 250 — horizontal banner */}
+        <div className="mx-auto mb-6 max-w-6xl">
           <CollectionCard
             href="/collections/america-250"
             internal
@@ -425,7 +426,11 @@ function HomePage() {
             gradient="linear-gradient(160deg, #1a2f5c 0%, #2d4f8a 60%, #3a6faa 100%)"
             delay="reveal-d1"
             video={america250Video}
+            featured
           />
+        </div>
+
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <CollectionCard
             tag="Family · Heirloom"
             name="Roots & Legacy"
@@ -687,6 +692,7 @@ function CollectionCard({
   gradient,
   delay,
   video,
+  featured = false,
 }: {
   href?: string;
   internal?: boolean;
@@ -698,6 +704,7 @@ function CollectionCard({
   gradient: string;
   delay: string;
   video?: string;
+  featured?: boolean;
 }) {
   const inner = (
     <>
@@ -757,7 +764,8 @@ function CollectionCard({
     </>
   );
 
-  const className = `reveal ${delay} group relative block ${video ? "aspect-[9/16]" : "aspect-[4/5]"} overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
+  const ratio = featured ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/5]";
+  const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
 
   if (comingSoon) {
     return <div className={className}>{inner}</div>;
