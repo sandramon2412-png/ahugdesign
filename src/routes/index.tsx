@@ -764,7 +764,7 @@ function CollectionCard({
     </>
   );
 
-  const ratio = featured ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/5]";
+  const ratio = featured ? "aspect-[760/468]" : "aspect-[4/5]";
   const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
 
   if (comingSoon) {
