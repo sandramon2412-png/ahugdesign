@@ -7,11 +7,14 @@ import design02 from "@/assets/america-250/design-02.jpg";
 import design03 from "@/assets/america-250/design-03.jpg";
 import design04 from "@/assets/america-250/design-04.jpg";
 
+// 👇 Para agregar más diseños: copia el archivo a src/assets/america-250/design-XX.jpg
+//    importa arriba y agrega un objeto aquí. Cualquier tamaño/proporción funciona.
 const REAL_DESIGNS: { src: string; name: string }[] = [
   { src: design01, name: "America 1776 — Born in Liberty" },
   { src: design02, name: "Born in 1976 · Double Celebration" },
   { src: design03, name: "Faith & Freedom" },
   { src: design04, name: "Descendant of a Patriot" },
+  // { src: design05, name: "Nombre del diseño" },
 ];
 
 const PRODUCT_TYPES = [
@@ -279,7 +282,7 @@ function America250Page() {
                       src={real.src}
                       alt={real.name}
                       loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="size-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                     />
                   ) : (
                     <PlaceholderImage
