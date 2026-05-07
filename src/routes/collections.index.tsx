@@ -41,7 +41,7 @@ const COLLECTIONS = [
   },
 ];
 
-export const Route = createFileRoute("/collections")({
+export const Route = createFileRoute("/collections/")({
   head: () => ({
     meta: [
       { title: "Collections · A Hug Design" },
