@@ -2,6 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/useReveal";
 import { PlaceholderImage } from "@/components/site/PlaceholderImage";
 import { BotanicalDivider } from "@/components/site/BotanicalDivider";
+import design01 from "@/assets/america-250/design-01.jpg";
+import design02 from "@/assets/america-250/design-02.jpg";
+import design03 from "@/assets/america-250/design-03.jpg";
+import design04 from "@/assets/america-250/design-04.jpg";
+
+const REAL_DESIGNS: { src: string; name: string }[] = [
+  { src: design01, name: "America 1776 — Born in Liberty" },
+  { src: design02, name: "Born in 1976 · Double Celebration" },
+  { src: design03, name: "Faith & Freedom" },
+  { src: design04, name: "Descendant of a Patriot" },
+];
 
 const PRODUCT_TYPES = [
   {
@@ -256,18 +267,30 @@ function America250Page() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-6">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <div
-                key={i}
-                className={`reveal reveal-d${(i % 5) + 1} group aspect-square overflow-hidden rounded-xl shadow-card`}
-              >
-                <PlaceholderImage
-                  label={`Design ${String(i + 1).padStart(2, "0")}`}
-                  gradient={`linear-gradient(${135 + i * 7}deg, #1a2f5c 0%, ${i % 2 === 0 ? "#8a3a3a" : "#3a6faa"} 100%)`}
-                  className="size-full transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            ))}
+            {Array.from({ length: 24 }).map((_, i) => {
+              const real = REAL_DESIGNS[i];
+              return (
+                <div
+                  key={i}
+                  className={`reveal reveal-d${(i % 5) + 1} group aspect-square overflow-hidden rounded-xl shadow-card bg-white`}
+                >
+                  {real ? (
+                    <img
+                      src={real.src}
+                      alt={real.name}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <PlaceholderImage
+                      label={`Design ${String(i + 1).padStart(2, "0")}`}
+                      gradient={`linear-gradient(${135 + i * 7}deg, #1a2f5c 0%, ${i % 2 === 0 ? "#8a3a3a" : "#3a6faa"} 100%)`}
+                      className="size-full transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
