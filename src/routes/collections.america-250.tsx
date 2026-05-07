@@ -282,7 +282,7 @@ function America250Page() {
                       src={real.src}
                       alt={real.name}
                       loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="size-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                     />
                   ) : (
                     <PlaceholderImage
