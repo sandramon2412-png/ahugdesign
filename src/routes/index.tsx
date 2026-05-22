@@ -14,6 +14,8 @@ import packagingRitual2Image from "@/assets/packaging-ritual-2.png";
 import packagingRitual3Image from "@/assets/packaging-ritual-3.png";
 import america250Video from "@/assets/america-250.mp4?url";
 
+const INSTAGRAM_URL = "https://www.instagram.com/ahugdesign";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61590305601722";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,13 +110,13 @@ function HomePage() {
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-soft transition-all hover:-translate-y-0.5"
               style={{ background: "var(--terra)" }}
             >
-              Shop the Collection
+              Shop on Etsy
             </a>
             <Link
-              to="/about"
+              to="/collections/america-250"
               className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-xs font-normal uppercase tracking-[0.14em] text-white/90 transition-all hover:border-white/70 hover:bg-white/10"
             >
-              Explore Our Story
+              View America 250
             </Link>
           </div>
         </div>
@@ -132,6 +134,36 @@ function HomePage() {
           <span className="text-[9px] uppercase tracking-[0.22em]" style={{ color: "rgba(245,240,232,0.4)" }}>
             Scroll
           </span>
+        </div>
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="relative z-10 px-6 py-5 md:px-12" style={{ background: "var(--cream-white)" }}>
+        <div
+          className="reveal mx-auto grid max-w-6xl gap-3 rounded-2xl border px-4 py-4 shadow-card sm:grid-cols-2 lg:grid-cols-4"
+          style={{ borderColor: "color-mix(in oklab, var(--sage) 24%, transparent)", background: "var(--linen)" }}
+        >
+          {[
+            ["Made to order", "Freshly produced for every customer"],
+            ["Secure Etsy checkout", "Favorites, reviews and buyer protection"],
+            ["Custom orders welcome", "Names, dates and personal details"],
+            ["U.S. fulfillment", "Professionally printed and shipped with care"],
+          ].map(([title, body]) => (
+            <div key={title} className="flex items-start gap-3 px-2 py-1">
+              <span
+                className="mt-1 size-2.5 rounded-full"
+                style={{ background: "var(--terra)", boxShadow: "0 0 0 5px color-mix(in oklab, var(--terra) 12%, transparent)" }}
+              />
+              <span>
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: "var(--espresso)" }}>
+                  {title}
+                </span>
+                <span className="mt-1 block text-xs font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+                  {body}
+                </span>
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -162,7 +194,7 @@ function HomePage() {
               </svg>
             }
             title="Crafted with Care"
-            body="From concept to doorstep, every detail is handled with the same love you'd put into a handwritten letter — because you deserve nothing less."
+            body="From concept to checkout, every detail is guided with the same love you'd put into a handwritten letter, because you deserve nothing less."
             delay="reveal-d2"
           />
           <BPDivider />
@@ -184,7 +216,7 @@ function HomePage() {
 
       {/* STORY */}
       <section className="grid min-h-[600px] md:grid-cols-2" id="story">
-        <div className="reveal relative min-h-[420px] overflow-hidden">
+        <div className="reveal interactive-image-frame relative m-6 min-h-[420px] overflow-hidden rounded-3xl md:m-8">
           <img
             src={ourStoryImage}
             alt="Sandra · founder portrait — A Hug Design"
@@ -255,15 +287,15 @@ function HomePage() {
             className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]"
             style={{ color: "var(--sage-light)" }}
           >
-            How It's Made
+            Our Creative Process
           </p>
           <h2
             className="mb-4 font-display"
             style={{ fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1, color: "var(--cream-white)" }}
           >
-            Made with Hands,
+            Designed with Heart
             <br />
-            Heart &amp; Intention
+            &amp; Intention
           </h2>
           <p
             className="font-display italic text-lg"
@@ -274,7 +306,7 @@ function HomePage() {
         </div>
 
         <div
-          className="reveal reveal-d2 mx-auto mb-16 aspect-video max-w-3xl overflow-hidden rounded-2xl"
+          className="reveal reveal-d2 interactive-image-frame mx-auto mb-16 aspect-video max-w-3xl overflow-hidden rounded-2xl"
           style={{ border: "1.5px solid color-mix(in oklab, var(--sage) 35%, transparent)" }}
         >
           <video
@@ -288,28 +320,43 @@ function HomePage() {
           />
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-10 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-3">
           {[
-            { n: "01", l: "We Design", b: "Every collection starts with a story — a feeling, a celebration, a moment worth capturing in cloth." },
-            { n: "02", l: "We Craft", b: "Printed on premium materials with care, each piece is made to be worn, gifted, and treasured for years." },
-            { n: "03", l: "You Celebrate", b: "Delivered with love straight to your door — wrapped with intention, sent with warmth." },
+            { n: "01", l: "We Design", b: "Every collection starts with a story, a feeling, a celebration, a moment worth capturing in cloth." },
+            { n: "02", l: "We Prepare", b: "Your piece is professionally printed on quality materials, made to be worn, gifted, and treasured for years." },
+            { n: "03", l: "You Celebrate", b: "Ordered securely through Etsy and sent with warmth, so the experience feels thoughtful from start to finish." },
           ].map((s, i) => (
-            <div key={s.n} className={`reveal reveal-d${i + 1}`}>
+            <div
+              key={s.n}
+              className={`reveal reveal-d${i + 1} group relative overflow-hidden rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-2`}
+              style={{
+                borderColor: "color-mix(in oklab, var(--sage-light) 18%, transparent)",
+                background:
+                  "radial-gradient(circle at 18% 12%, color-mix(in oklab, var(--sage-light) 14%, transparent), transparent 38%), linear-gradient(145deg, color-mix(in oklab, var(--espresso) 72%, transparent), color-mix(in oklab, var(--terra) 18%, transparent))",
+                boxShadow:
+                  "0 30px 80px -46px rgba(0,0,0,0.85), inset 0 1px 0 color-mix(in oklab, white 14%, transparent)",
+                backdropFilter: "blur(16px)",
+              }}
+            >
               <div
-                className="mb-2 font-display text-6xl font-light leading-none"
-                style={{ color: "color-mix(in oklab, var(--sage) 25%, transparent)" }}
+                className="pointer-events-none absolute inset-3 rounded-xl border opacity-45 transition-opacity duration-500 group-hover:opacity-80"
+                style={{ borderColor: "color-mix(in oklab, var(--sage-light) 26%, transparent)" }}
+              />
+              <div
+                className="relative mb-3 font-display text-6xl font-light leading-none transition-transform duration-500 group-hover:-translate-y-1"
+                style={{ color: "color-mix(in oklab, var(--sage-light) 36%, transparent)" }}
               >
                 {s.n}
               </div>
               <p
-                className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em]"
+                className="relative mb-3 text-[10px] font-semibold uppercase tracking-[0.22em]"
                 style={{ color: "var(--sage-light)" }}
               >
                 {s.l}
               </p>
               <p
-                className="text-sm font-light leading-relaxed"
-                style={{ color: "color-mix(in oklab, var(--cream) 55%, transparent)" }}
+                className="relative text-sm font-light leading-relaxed"
+                style={{ color: "color-mix(in oklab, var(--cream) 68%, transparent)" }}
               >
                 {s.b}
               </p>
@@ -337,14 +384,14 @@ function HomePage() {
             A small space, <em className="italic">big intention</em>
           </h2>
           <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            Our studio is where every tote, tee, mug and cap is folded, tagged and packed by hand. Sage greens, warm
-            linens and terracotta accents — the same palette you'll find in every piece we send out the door.
+            Our studio is where every idea is sketched, refined and prepared with intention. Sage greens, warm
+            linens and terracotta accents shape the same mood you find across the shop.
           </p>
           <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
             Small shelves, slow rhythms, and a lot of natural light.
           </p>
         </div>
-        <div className="reveal reveal-d2 relative min-h-[360px] overflow-hidden">
+        <div className="reveal reveal-d2 interactive-image-frame relative m-6 min-h-[360px] overflow-hidden rounded-3xl md:m-8">
           <img
             src={studioShelvesImage}
             alt="A Hug Design studio shelves with folded apparel, mugs, totes and caps"
@@ -371,7 +418,7 @@ function HomePage() {
           </p>
         </div>
         <div className="reveal reveal-d2 mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="overflow-hidden rounded-2xl shadow-card">
+          <div className="interactive-image-frame overflow-hidden rounded-2xl">
             <img
               src={packagingFlatlayImage}
               alt="A Hug Design packaging materials laid out on a wooden table with ribbon, labels, boxes and seal stamp"
@@ -379,7 +426,7 @@ function HomePage() {
               loading="lazy"
             />
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-card">
+          <div className="interactive-image-frame overflow-hidden rounded-2xl">
             <img
               src={packagingRitual2Image}
               alt="Kraft envelope with A Hug Design logo surrounded by twine-tied thank you notes, ribbons and washi tape"
@@ -387,7 +434,7 @@ function HomePage() {
               loading="lazy"
             />
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-card">
+          <div className="interactive-image-frame overflow-hidden rounded-2xl">
             <img
               src={packagingRitual3Image}
               alt="Flatlay of kraft gift boxes, eucalyptus, twine, wax seal and scissors on a wooden table"
@@ -422,8 +469,8 @@ function HomePage() {
             tag="Patriotic · Limited Edition"
             name="America 250"
             desc="Celebrating 250 years of American freedom"
-            cta="Explore Collection →"
-            gradient="linear-gradient(160deg, #1a2f5c 0%, #2d4f8a 60%, #3a6faa 100%)"
+            cta="View America 250"
+            gradient="linear-gradient(145deg, #4f684b 0%, #9a6f4b 48%, #c56f4f 76%, #f2eadc 100%)"
             delay="reveal-d1"
             video={america250Video}
             featured
@@ -434,7 +481,7 @@ function HomePage() {
           <CollectionCard
             tag="Family · Heirloom"
             name="Roots & Legacy"
-            desc="Diseños personalizados con apellido familiar"
+            desc="Personalized family-name designs for heritage keepsakes"
             comingSoon
             gradient="linear-gradient(160deg, #8a4a2a 0%, var(--terra) 100%)"
             delay="reveal-d2"
@@ -442,7 +489,7 @@ function HomePage() {
           <CollectionCard
             tag="Faith · Liberty"
             name="Faith & Freedom"
-            desc="Diseños cristianos + patrióticos"
+            desc="Christian and patriotic designs for everyday faith"
             comingSoon
             gradient="linear-gradient(160deg, #4a5e38 0%, var(--sage) 100%)"
             delay="reveal-d3"
@@ -450,7 +497,7 @@ function HomePage() {
           <CollectionCard
             tag="Birthdays · Milestones"
             name="Born to Celebrate"
-            desc="Cumpleaños milestone — 30, 40, 50, 60 años"
+            desc="Milestone birthday designs for 30, 40, 50 and 60"
             comingSoon
             gradient="linear-gradient(160deg, #2e2218 0%, var(--umber) 100%)"
             delay="reveal-d4"
@@ -458,7 +505,7 @@ function HomePage() {
           <CollectionCard
             tag="Humor · Everyday"
             name="Good Humor"
-            desc="Diseños graciosos y sarcásticos"
+            desc="Funny, sarcastic designs for everyday gifting"
             comingSoon
             gradient="linear-gradient(160deg, var(--sage-dark) 0%, var(--sage) 100%)"
             delay="reveal-d5"
@@ -469,7 +516,7 @@ function HomePage() {
       {/* SHOP ON ETSY — mobile lifestyle */}
       <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream)" }}>
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-          <div className="reveal relative aspect-square overflow-hidden rounded-3xl shadow-card">
+          <div className="reveal interactive-image-frame relative aspect-square overflow-hidden rounded-3xl">
             <img
               src={etsyMobileImage}
               alt="Browsing the A Hug Design Etsy shop on a phone over a coffee table"
@@ -492,7 +539,7 @@ function HomePage() {
             </h2>
             <p className="mb-7 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
               The full collection lives on our Etsy shop — browse, favorite and check out securely from anywhere. Every
-              order is wrapped by hand and shipped with intention.
+              order is professionally produced and shipped with care.
             </p>
             <a
               href="https://www.etsy.com/shop/AHugDesign"
@@ -524,21 +571,21 @@ function HomePage() {
           </p>
         </div>
         <a
-          href="https://instagram.com"
+          href={INSTAGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="reveal reveal-d2 group mx-auto block max-w-5xl overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1"
+          className="reveal reveal-d2 interactive-image-frame mx-auto block max-w-5xl overflow-hidden rounded-3xl"
         >
           <img
             src={instagramGridImage}
             alt="Instagram mood board grid for A Hug Design — botanicals, totes, stickers and brand quotes"
-            className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
+            className="block h-auto w-full"
             loading="lazy"
           />
         </a>
         <div className="mt-8 text-center">
           <a
-            href="https://instagram.com"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all hover:-translate-y-px"
@@ -546,16 +593,28 @@ function HomePage() {
           >
             Follow @ahugdesign →
           </a>
+          <a
+            href={FACEBOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-0 mt-3 inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all hover:-translate-y-px sm:ml-3 sm:mt-0"
+            style={{ borderColor: "color-mix(in oklab, var(--terra) 45%, transparent)", color: "var(--terra-dark)" }}
+          >
+            Visit Facebook →
+          </a>
         </div>
       </section>
 
       {/* WITH EVERY ORDER */}
       <section className="grid items-stretch md:grid-cols-2">
-        <div className="reveal relative min-h-[360px] overflow-hidden">
+        <div
+          className="reveal interactive-image-frame relative m-6 min-h-[360px] overflow-hidden rounded-3xl md:m-8"
+          style={{ background: "color-mix(in oklab, var(--linen) 82%, var(--cream-white))" }}
+        >
           <img
             src={packagingDetailsImage}
             alt="A Hug Design order packaging with thank-you card, tags, stickers and small gift box"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-contain"
             loading="lazy"
           />
         </div>
@@ -602,7 +661,7 @@ function HomePage() {
               fontSize: "clamp(52px, 8vw, 96px)",
               color: "var(--cream-white)",
               lineHeight: 0.95,
-              letterSpacing: "-0.02em",
+              letterSpacing: "0",
             }}
           >
             Find a piece that
@@ -633,7 +692,7 @@ function HomePage() {
             Shop on Etsy →
           </a>
           <p className="text-[11px] uppercase tracking-[0.1em]" style={{ color: "rgba(245,240,232,0.45)" }}>
-            Free U.S. shipping on orders over $50
+            Made to order through Etsy
           </p>
         </div>
       </section>
@@ -653,8 +712,9 @@ function BPColumn({
   delay: string;
 }) {
   return (
-    <div className={`reveal ${delay} px-6 text-center md:px-12`}>
-      <div className="mb-5 flex justify-center">{icon}</div>
+    <div className={`order-glass-card reveal ${delay} group rounded-2xl p-7 text-center md:p-8`}>
+      <div className="relative z-10">
+      <div className="mb-5 flex justify-center transition-transform duration-500 group-hover:-translate-y-1">{icon}</div>
       <h3
         className="mb-4 font-display italic"
         style={{ fontSize: "clamp(22px, 2.5vw, 30px)", color: "var(--espresso)", lineHeight: 1.2 }}
@@ -664,6 +724,7 @@ function BPColumn({
       <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
         {body}
       </p>
+      </div>
     </div>
   );
 }
@@ -671,7 +732,7 @@ function BPColumn({
 function BPDivider() {
   return (
     <div
-      className="hidden self-center md:block"
+      className="hidden self-center opacity-60 md:block"
       style={{
         width: 1,
         height: 160,
@@ -708,7 +769,7 @@ function CollectionCard({
 }) {
   const inner = (
     <>
-      <div className="absolute inset-0" style={{ background: gradient }} />
+      <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" style={{ background: gradient }} />
       {video && (
         <video
           src={video}
@@ -716,7 +777,7 @@ function CollectionCard({
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       )}
       <div
@@ -727,58 +788,87 @@ function CollectionCard({
             : "linear-gradient(to top, rgba(35,28,22,0.85) 0%, rgba(35,28,22,0.2) 50%, transparent 100%)",
         }}
       />
+      <div
+        className="absolute inset-0 opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(circle at 18% 18%, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.08) 24%, transparent 45%)",
+        }}
+      />
+      <div
+        className="absolute -left-1/2 top-0 h-full w-1/2 -skew-x-12 opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-45"
+        style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.34) 50%, transparent 100%)" }}
+      />
       <div className="absolute inset-0 bg-grain opacity-[0.05]" />
       <span
-        className="absolute left-5 top-5 rounded-full px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur"
-        style={{ background: "rgba(35,28,22,0.3)" }}
+        className="absolute left-5 top-5 rounded-full border px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:border-white/35 group-hover:bg-white/15"
+        style={{ background: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.16)" }}
       >
         {tag}
       </span>
       <div className="absolute inset-x-0 bottom-0 p-7">
-        <h3
-          className="mb-1.5 font-display italic text-white"
-          style={{ fontSize: "clamp(28px, 3vw, 38px)", lineHeight: 1.1 }}
+        <div
+          className="rounded-2xl border p-5 backdrop-blur-md transition-all duration-500 group-hover:-translate-y-1 group-hover:bg-white/13"
+          style={{
+            background: "linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04))",
+            borderColor: "rgba(255,255,255,0.16)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
+          }}
         >
-          {name}
-        </h3>
-        <p className="mb-5 text-xs text-white/70">{desc}</p>
-        {comingSoon ? (
-          <span
-            className="inline-flex items-center rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em]"
-            style={{
-              border: "1.5px solid color-mix(in oklab, var(--sage-light) 70%, transparent)",
-              color: "color-mix(in oklab, var(--sage-light) 95%, transparent)",
-            }}
+          <h3
+            className="mb-1.5 font-display italic text-white"
+            style={{ fontSize: "clamp(28px, 3vw, 38px)", lineHeight: 1.1 }}
           >
-            Coming Soon
-          </span>
-        ) : (
-          <span
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-white"
-            style={{ background: "var(--terra)" }}
-          >
-            {cta}
-          </span>
-        )}
+            {name}
+          </h3>
+          <p className="mb-5 text-xs text-white/75">{desc}</p>
+          {comingSoon ? (
+            <span
+              className="inline-flex items-center rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 group-hover:bg-white/10"
+              style={{
+                border: "1.5px solid color-mix(in oklab, var(--sage-light) 70%, transparent)",
+                color: "color-mix(in oklab, var(--sage-light) 95%, transparent)",
+              }}
+            >
+              Coming Soon
+            </span>
+          ) : (
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 group-hover:translate-x-1"
+              style={{ background: "var(--terra)" }}
+            >
+              {cta}
+            </span>
+          )}
+        </div>
       </div>
     </>
   );
 
   const ratio = featured ? "aspect-[760/468]" : "aspect-[4/5]";
-  const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
+  const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl border shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_70px_-34px_rgba(46,34,24,0.7)]`;
+  const cardStyle = {
+    borderColor: "rgba(255,255,255,0.34)",
+    background: "rgba(255,255,255,0.08)",
+    boxShadow: "0 18px 48px -34px rgba(46,34,24,0.55), inset 0 1px 0 rgba(255,255,255,0.2)",
+  };
 
   if (comingSoon) {
-    return <div className={className}>{inner}</div>;
+    return (
+      <div className={className} style={cardStyle}>
+        {inner}
+      </div>
+    );
   }
   if (internal && href) {
     return (
-      <Link to={href as string} className={className}>
+      <Link to={href as string} className={className} style={cardStyle}>
         {inner}
       </Link>
     );
   }
   return (
-    <a href={href} className={className}>
+    <a href={href} className={className} style={cardStyle}>
       {inner}
     </a>
   );

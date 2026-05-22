@@ -239,6 +239,138 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-card { box-shadow: var(--shadow-card); }
 
+  .interactive-image-frame {
+    position: relative;
+    overflow: hidden;
+    border: 1.5px solid color-mix(in oklab, var(--cream-white) 82%, var(--sage-light));
+    background:
+      linear-gradient(135deg, color-mix(in oklab, var(--cream-white) 32%, transparent), transparent 48%),
+      color-mix(in oklab, var(--cream-white) 18%, transparent);
+    box-shadow:
+      0 34px 85px -42px oklch(0.30 0.018 50 / 0.72),
+      0 14px 30px -22px color-mix(in oklab, var(--terra) 45%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--cream-white) 78%, transparent);
+    transition:
+      transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .interactive-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    z-index: 2;
+    border: 1px solid color-mix(in oklab, var(--cream-white) 74%, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.9;
+    transition: opacity 0.45s ease;
+  }
+
+  .interactive-image-frame::after {
+    content: "";
+    position: absolute;
+    inset: -45% auto -45% -70%;
+    z-index: 3;
+    width: 42%;
+    transform: rotate(18deg);
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--cream-white) 50%, transparent), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      left 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.35s ease;
+  }
+
+  .interactive-image-frame img,
+  .interactive-image-frame video {
+    transition:
+      transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+      filter 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .interactive-image-frame:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in oklab, var(--sage-light) 70%, var(--cream-white));
+    box-shadow:
+      0 46px 100px -42px oklch(0.30 0.018 50 / 0.78),
+      0 18px 42px -24px color-mix(in oklab, var(--terra) 62%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--cream-white) 88%, transparent);
+  }
+
+  .interactive-image-frame:hover::before {
+    opacity: 0.95;
+  }
+
+  .interactive-image-frame:hover::after {
+    left: 128%;
+    opacity: 0.86;
+  }
+
+  .interactive-image-frame:hover img,
+  .interactive-image-frame:hover video {
+    transform: scale(1.035);
+    filter: saturate(1.04) contrast(1.02);
+  }
+
+  .order-glass-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in oklab, var(--cream-white) 58%, var(--sage));
+    background:
+      radial-gradient(circle at 12% 10%, color-mix(in oklab, var(--terra) 18%, transparent), transparent 34%),
+      radial-gradient(circle at 86% 16%, color-mix(in oklab, var(--sage-light) 24%, transparent), transparent 36%),
+      linear-gradient(145deg, color-mix(in oklab, var(--cream-white) 82%, transparent), color-mix(in oklab, var(--linen) 68%, transparent));
+    box-shadow:
+      0 34px 90px -50px oklch(0.24 0.02 52 / 0.78),
+      0 18px 38px -28px color-mix(in oklab, var(--terra) 58%, transparent),
+      inset 0 1px 0 color-mix(in oklab, white 78%, transparent);
+    backdrop-filter: blur(18px);
+    transition:
+      transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-color 0.45s ease;
+  }
+
+  .order-glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid color-mix(in oklab, white 54%, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.78;
+  }
+
+  .order-glass-card::after {
+    content: "";
+    position: absolute;
+    inset: -30% auto -30% -70%;
+    width: 42%;
+    transform: rotate(17deg);
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, white 45%, transparent), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.3s ease;
+  }
+
+  .order-glass-card:hover {
+    transform: translateY(-7px);
+    border-color: color-mix(in oklab, var(--sage) 46%, var(--terra));
+    box-shadow:
+      0 46px 105px -48px oklch(0.22 0.022 52 / 0.82),
+      0 24px 52px -30px color-mix(in oklab, var(--terra) 72%, transparent),
+      inset 0 1px 0 color-mix(in oklab, white 86%, transparent);
+  }
+
+  .order-glass-card:hover::after {
+    left: 130%;
+    opacity: 0.76;
+  }
+
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: none; }

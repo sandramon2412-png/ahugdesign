@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail } from "lucide-react";
 
+const INSTAGRAM_URL = "https://www.instagram.com/ahugdesign";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61590305601722";
+const SUPPORT_EMAIL = "ahugdesign.support@gmail.com";
+
 export function Footer() {
   return (
     <footer
@@ -25,7 +29,7 @@ export function Footer() {
             className="mt-6 max-w-xs text-sm font-light leading-relaxed"
             style={{ color: "color-mix(in oklab, var(--cream) 55%, transparent)" }}
           >
-            Woman-owned studio crafting tote bags, apparel and gifts that celebrate the moments that matter.
+            Woman-owned studio designing tote bags, apparel and gifts that celebrate the moments that matter.
           </p>
         </div>
 
@@ -83,7 +87,7 @@ export function Footer() {
               Etsy · @AHugDesign
             </a>
             <a
-              href="https://instagram.com"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-sm font-light transition-colors hover:text-cream-white"
@@ -100,8 +104,26 @@ export function Footer() {
               </span>
               Instagram
             </a>
-            <Link
-              to="/contact"
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-sm font-light transition-colors hover:text-cream-white"
+              style={{ color: "color-mix(in oklab, var(--cream) 55%, transparent)" }}
+            >
+              <span
+                className="grid size-8 place-items-center rounded-full text-[13px] font-bold"
+                style={{
+                  background: "color-mix(in oklab, var(--cream) 6%, transparent)",
+                  border: "1px solid color-mix(in oklab, var(--cream) 12%, transparent)",
+                }}
+              >
+                f
+              </span>
+              Facebook
+            </a>
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
               className="inline-flex items-center gap-3 text-sm font-light transition-colors hover:text-cream-white"
               style={{ color: "color-mix(in oklab, var(--cream) 55%, transparent)" }}
             >
@@ -114,8 +136,8 @@ export function Footer() {
               >
                 <Mail size={13} />
               </span>
-              Send a message
-            </Link>
+              {SUPPORT_EMAIL}
+            </a>
           </div>
         </div>
       </div>
@@ -124,7 +146,7 @@ export function Footer() {
         style={{ color: "color-mix(in oklab, var(--cream) 28%, transparent)" }}
       >
         <span>© {new Date().getFullYear()} A Hug Design · Woman-owned · Est. 2023</span>
-        <span>Made with care in the U.S.A.</span>
+        <span>Designed in Dallas · Made to order</span>
       </div>
     </footer>
   );

@@ -77,7 +77,7 @@ export function Navbar() {
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:-translate-y-px"
             style={{ background: scrolled ? "var(--sage)" : "var(--terra)" }}
           >
-            Shop Etsy →
+            Shop on Etsy →
           </a>
         </div>
 
@@ -115,7 +115,7 @@ export function Navbar() {
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-white"
               style={{ background: "var(--terra)" }}
             >
-              Shop Etsy →
+              Shop on Etsy →
             </a>
           </div>
         </div>

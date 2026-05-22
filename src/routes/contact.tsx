@@ -4,7 +4,11 @@ import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { Mail, MessageCircle } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
-import { submitContactMessage } from "@/server/contact.functions";
+import { submitContactMessage } from "./-contact.functions";
+
+const INSTAGRAM_URL = "https://www.instagram.com/ahugdesign";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61590305601722";
+const SUPPORT_EMAIL = "ahugdesign.support@gmail.com";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -116,7 +120,9 @@ function ContactPage() {
                   Email
                 </p>
                 <p className="text-sm" style={{ color: "var(--espresso)" }}>
-                  hello@ahugdesign.com
+                  <a href={`mailto:${SUPPORT_EMAIL}`} className="underline-offset-4 hover:underline">
+                    {SUPPORT_EMAIL}
+                  </a>
                 </p>
               </div>
             </div>
@@ -139,6 +145,50 @@ function ContactPage() {
                   style={{ color: "var(--espresso)" }}
                 >
                   @AHugDesign
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div
+                className="grid size-10 flex-none place-items-center rounded-full text-sm font-semibold"
+                style={{ background: "color-mix(in oklab, var(--sage) 18%, transparent)", color: "var(--sage-dark)" }}
+              >
+                IG
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--sage)" }}>
+                  Instagram
+                </p>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm underline-offset-4 hover:underline"
+                  style={{ color: "var(--espresso)" }}
+                >
+                  @ahugdesign
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div
+                className="grid size-10 flex-none place-items-center rounded-full text-sm font-semibold"
+                style={{ background: "color-mix(in oklab, var(--terra) 18%, transparent)", color: "var(--terra-dark)" }}
+              >
+                f
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--terra)" }}>
+                  Facebook
+                </p>
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm underline-offset-4 hover:underline"
+                  style={{ color: "var(--espresso)" }}
+                >
+                  AHugDesign on Facebook
                 </a>
               </div>
             </div>
