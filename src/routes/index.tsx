@@ -446,7 +446,7 @@ function HomePage() {
       </section>
 
       {/* COLLECTIONS */}
-      <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream-white)" }} id="collections">
+      <section className="scroll-mt-32 px-6 py-20 md:px-12 md:py-24" style={{ background: "var(--cream-white)" }} id="collections">
         <div className="reveal mx-auto mb-14 max-w-xl text-center">
           <p className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]" style={{ color: "var(--terra)" }}>
             Our Collections
@@ -845,7 +845,7 @@ function CollectionCard({
     </>
   );
 
-  const ratio = featured ? "aspect-[760/468]" : "aspect-[4/5]";
+  const ratio = featured ? "aspect-[1.12/1] sm:aspect-[760/468]" : "aspect-[1.08/1] sm:aspect-[4/5]";
   const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl border shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_70px_-34px_rgba(46,34,24,0.7)]`;
   const cardStyle = {
     borderColor: "rgba(255,255,255,0.34)",

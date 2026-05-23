@@ -88,7 +88,7 @@ function CollectionsPage() {
       <section className="px-6 pb-24 md:px-12" style={{ background: "var(--cream)" }}>
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           {COLLECTIONS.map((c, i) => {
-            const cardClass = `reveal reveal-d${(i % 5) + 1} group relative block aspect-[4/5] overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1`;
+            const cardClass = `reveal reveal-d${(i % 5) + 1} group relative block aspect-[1.08/1] overflow-hidden rounded-3xl shadow-card transition-transform hover:-translate-y-1 md:aspect-[4/5]`;
             const inner = (
               <>
                 <div className="absolute inset-0" style={{ background: c.gradient }} />
