@@ -12,7 +12,7 @@ import packagingFlatlayImage from "@/assets/packaging-flatlay.png";
 import packagingDetailsImage from "@/assets/packaging-details.png";
 import packagingRitual2Image from "@/assets/packaging-ritual-2.png";
 import packagingRitual3Image from "@/assets/packaging-ritual-3.png";
-import giftBoxImage from "@/assets/gift-box-sharp.jpg";
+import giftBoxImage from "@/assets/gift-box-premium.jpg";
 import america250Video from "@/assets/america-250.mp4?url";
 
 const INSTAGRAM_URL = "https://www.instagram.com/ahugdesign";
