@@ -12,6 +12,7 @@ import packagingFlatlayImage from "@/assets/packaging-flatlay.png";
 import packagingDetailsImage from "@/assets/packaging-details.png";
 import packagingRitual2Image from "@/assets/packaging-ritual-2.png";
 import packagingRitual3Image from "@/assets/packaging-ritual-3.png";
+import giftBoxImage from "@/assets/gift-box.png";
 import america250Video from "@/assets/america-250.mp4?url";
 
 const INSTAGRAM_URL = "https://www.instagram.com/ahugdesign";
@@ -29,7 +30,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "A Hug Design · Designs That Feel Like a Hug" },
       {
         property: "og:description",
-        content: "Designs that celebrate the moments that matter — tote bags, apparel, gifts and personalized keepsakes.",
+        content:
+          "Designs that celebrate the moments that matter — tote bags, apparel, gifts and personalized keepsakes.",
       },
     ],
   }),
@@ -42,7 +44,10 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-section relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden" style={{ background: "oklch(0.22 0.018 50)" }}>
+      <section
+        className="hero-section relative flex h-screen min-h-[640px] items-center justify-center overflow-hidden"
+        style={{ background: "oklch(0.22 0.018 50)" }}
+      >
         <div className="hero-video-wrap absolute inset-0">
           <video
             className="hero-video absolute inset-0 h-full w-full object-contain"
@@ -55,7 +60,10 @@ function HomePage() {
             poster=""
           />
         </div>
-        <div className="hero-overlay absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
+        <div
+          className="hero-overlay absolute inset-0"
+          style={{ background: "var(--gradient-hero-overlay)" }}
+        />
         <div className="hero-overlay absolute inset-0 bg-grain opacity-[0.06]" />
 
         <div className="hero-content relative z-10 flex flex-col items-center gap-5 px-6 text-center">
@@ -102,7 +110,10 @@ function HomePage() {
           >
             Tote Bags · Apparel · Gifts · Personalized
           </p>
-          <div className="mt-3 flex flex-wrap justify-center gap-3.5 animate-fade-up" style={{ animationDelay: "1.3s" }}>
+          <div
+            className="mt-3 flex flex-wrap justify-center gap-3.5 animate-fade-up"
+            style={{ animationDelay: "1.3s" }}
+          >
             <a
               href="https://www.etsy.com/shop/AHugDesign"
               target="_blank"
@@ -129,19 +140,31 @@ function HomePage() {
             className="flex h-10 w-6 justify-center rounded-full pt-2"
             style={{ border: "1.5px solid rgba(245,240,232,0.4)" }}
           >
-            <div className="size-1 rounded-full animate-scroll-dot" style={{ background: "rgba(245,240,232,0.6)" }} />
+            <div
+              className="size-1 rounded-full animate-scroll-dot"
+              style={{ background: "rgba(245,240,232,0.6)" }}
+            />
           </div>
-          <span className="text-[9px] uppercase tracking-[0.22em]" style={{ color: "rgba(245,240,232,0.4)" }}>
+          <span
+            className="text-[9px] uppercase tracking-[0.22em]"
+            style={{ color: "rgba(245,240,232,0.4)" }}
+          >
             Scroll
           </span>
         </div>
       </section>
 
       {/* TRUST STRIP */}
-      <section className="relative z-10 px-6 py-5 md:px-12" style={{ background: "var(--cream-white)" }}>
+      <section
+        className="relative z-10 px-6 py-5 md:px-12"
+        style={{ background: "var(--cream-white)" }}
+      >
         <div
           className="reveal mx-auto grid max-w-6xl gap-3 rounded-2xl border px-4 py-4 shadow-card sm:grid-cols-2 lg:grid-cols-4"
-          style={{ borderColor: "color-mix(in oklab, var(--sage) 24%, transparent)", background: "var(--linen)" }}
+          style={{
+            borderColor: "color-mix(in oklab, var(--sage) 24%, transparent)",
+            background: "var(--linen)",
+          }}
         >
           {[
             ["Made to order", "Freshly produced for every customer"],
@@ -152,13 +175,22 @@ function HomePage() {
             <div key={title} className="flex items-start gap-3 px-2 py-1">
               <span
                 className="mt-1 size-2.5 rounded-full"
-                style={{ background: "var(--terra)", boxShadow: "0 0 0 5px color-mix(in oklab, var(--terra) 12%, transparent)" }}
+                style={{
+                  background: "var(--terra)",
+                  boxShadow: "0 0 0 5px color-mix(in oklab, var(--terra) 12%, transparent)",
+                }}
               />
               <span>
-                <span className="block text-[11px] font-semibold uppercase tracking-[0.16em]" style={{ color: "var(--espresso)" }}>
+                <span
+                  className="block text-[11px] font-semibold uppercase tracking-[0.16em]"
+                  style={{ color: "var(--espresso)" }}
+                >
                   {title}
                 </span>
-                <span className="mt-1 block text-xs font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+                <span
+                  className="mt-1 block text-xs font-light leading-relaxed"
+                  style={{ color: "var(--umber)" }}
+                >
                   {body}
                 </span>
               </span>
@@ -172,11 +204,15 @@ function HomePage() {
       {/* BRAND PROMISE */}
       <section className="relative overflow-hidden px-6 py-24 md:px-12">
         <div className="absolute inset-0 bg-botanical opacity-50 rounded-sm" />
-        <div className="relative mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-[1fr_1px_1fr_1px_1fr] md:gap-0">
+        <div className="relative mx-auto grid max-w-6xl items-stretch gap-12 md:grid-cols-[1fr_1px_1fr_1px_1fr] md:gap-0">
           <BPColumn
             icon={
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <path d="M18 2 C18 2 22 10 28 12 C22 14 18 22 18 22 C18 22 14 14 8 12 C14 10 18 2 18 2Z" fill="var(--sage-light)" opacity=".9" />
+                <path
+                  d="M18 2 C18 2 22 10 28 12 C22 14 18 22 18 22 C18 22 14 14 8 12 C14 10 18 2 18 2Z"
+                  fill="var(--sage-light)"
+                  opacity=".9"
+                />
                 <path d="M18 12 Q20 8 24 10" stroke="var(--sage)" strokeWidth="1" fill="none" />
               </svg>
             }
@@ -188,8 +224,19 @@ function HomePage() {
           <BPColumn
             icon={
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <path d="M18 4 C12 4 6 10 6 18 C6 26 12 32 18 32" stroke="var(--sage)" strokeWidth="1.2" fill="none" />
-                <path d="M18 4 C24 4 30 10 30 18 C30 26 24 32 18 32" stroke="var(--terra)" strokeWidth="1.2" fill="none" strokeDasharray="3 3" />
+                <path
+                  d="M18 4 C12 4 6 10 6 18 C6 26 12 32 18 32"
+                  stroke="var(--sage)"
+                  strokeWidth="1.2"
+                  fill="none"
+                />
+                <path
+                  d="M18 4 C24 4 30 10 30 18 C30 26 24 32 18 32"
+                  stroke="var(--terra)"
+                  strokeWidth="1.2"
+                  fill="none"
+                  strokeDasharray="3 3"
+                />
                 <circle cx="18" cy="18" r="3" fill="var(--beige)" />
               </svg>
             }
@@ -201,7 +248,12 @@ function HomePage() {
           <BPColumn
             icon={
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <path d="M18 30 C18 30 8 22 8 14 C8 9 12 6 18 8 C24 6 28 9 28 14 C28 22 18 30 18 30Z" fill="var(--blush)" stroke="var(--terra)" strokeWidth="1" />
+                <path
+                  d="M18 30 C18 30 8 22 8 14 C8 9 12 6 18 8 C24 6 28 9 28 14 C28 22 18 30 18 30Z"
+                  fill="var(--blush)"
+                  stroke="var(--terra)"
+                  strokeWidth="1"
+                />
                 <circle cx="18" cy="12" r="2" fill="var(--sage-light)" />
               </svg>
             }
@@ -243,9 +295,15 @@ function HomePage() {
             <em className="italic">a Warm Intention</em>
           </h2>
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-px flex-1" style={{ background: "color-mix(in oklab, var(--sage) 30%, transparent)" }} />
+            <span
+              className="h-px flex-1"
+              style={{ background: "color-mix(in oklab, var(--sage) 30%, transparent)" }}
+            />
             <span className="size-2 rounded-full" style={{ background: "var(--terra)" }} />
-            <span className="h-px flex-1" style={{ background: "color-mix(in oklab, var(--sage) 30%, transparent)" }} />
+            <span
+              className="h-px flex-1"
+              style={{ background: "color-mix(in oklab, var(--sage) 30%, transparent)" }}
+            />
           </div>
           <blockquote
             className="mb-7 border-l-2 pl-5 font-display italic"
@@ -256,13 +314,17 @@ function HomePage() {
               borderColor: "var(--sage-light)",
             }}
           >
-            "I started A Hug Design because I believe every meaningful gift should feel like an embrace."
+            "I started A Hug Design because I believe every meaningful gift should feel like an
+            embrace."
           </blockquote>
           <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            A Hug Design was born from a simple but powerful idea — that the things we carry and wear should tell stories worth telling. Every design begins with intention, celebrating the milestones and moments that define us.
+            A Hug Design was born from a simple but powerful idea — that the things we carry and
+            wear should tell stories worth telling. Every design begins with intention, celebrating
+            the milestones and moments that define us.
           </p>
           <p className="mb-3 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            From patriotic pride to family legacy, from faith and freedom to the humor in everyday life — we create pieces that feel personal, because they are.
+            From patriotic pride to family legacy, from faith and freedom to the humor in everyday
+            life — we create pieces that feel personal, because they are.
           </p>
           <p className="font-script text-4xl mt-3 mb-6" style={{ color: "var(--espresso)" }}>
             Sandra
@@ -291,7 +353,11 @@ function HomePage() {
           </p>
           <h2
             className="mb-4 font-display"
-            style={{ fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1, color: "var(--cream-white)" }}
+            style={{
+              fontSize: "clamp(34px, 4vw, 52px)",
+              lineHeight: 1,
+              color: "var(--cream-white)",
+            }}
           >
             Designed with Heart
             <br />
@@ -301,7 +367,8 @@ function HomePage() {
             className="font-display italic text-lg"
             style={{ color: "color-mix(in oklab, var(--cream) 55%, transparent)" }}
           >
-            Every design goes through a thoughtful creative process before it ever reaches your door.
+            Every design goes through a thoughtful creative process before it ever reaches your
+            door.
           </p>
         </div>
 
@@ -322,9 +389,21 @@ function HomePage() {
 
         <div className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-3">
           {[
-            { n: "01", l: "We Design", b: "Every collection starts with a story, a feeling, a celebration, a moment worth capturing in cloth." },
-            { n: "02", l: "We Prepare", b: "Your piece is professionally printed on quality materials, made to be worn, gifted, and treasured for years." },
-            { n: "03", l: "You Celebrate", b: "Ordered securely through Etsy and sent with warmth, so the experience feels thoughtful from start to finish." },
+            {
+              n: "01",
+              l: "We Design",
+              b: "Every collection starts with a story, a feeling, a celebration, a moment worth capturing in cloth.",
+            },
+            {
+              n: "02",
+              l: "We Prepare",
+              b: "Your piece is professionally printed on quality materials, made to be worn, gifted, and treasured for years.",
+            },
+            {
+              n: "03",
+              l: "You Celebrate",
+              b: "Ordered securely through Etsy and sent with warmth, so the experience feels thoughtful from start to finish.",
+            },
           ].map((s, i) => (
             <div
               key={s.n}
@@ -379,13 +458,17 @@ function HomePage() {
           </p>
           <h2
             className="mb-5 font-display"
-            style={{ fontSize: "clamp(30px, 3.5vw, 46px)", lineHeight: 1.1, color: "var(--espresso)" }}
+            style={{
+              fontSize: "clamp(30px, 3.5vw, 46px)",
+              lineHeight: 1.1,
+              color: "var(--espresso)",
+            }}
           >
             A small space, <em className="italic">big intention</em>
           </h2>
           <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            Our studio is where every idea is sketched, refined and prepared with intention. Sage greens, warm
-            linens and terracotta accents shape the same mood you find across the shop.
+            Our studio is where every idea is sketched, refined and prepared with intention. Sage
+            greens, warm linens and terracotta accents shape the same mood you find across the shop.
           </p>
           <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
             Small shelves, slow rhythms, and a lot of natural light.
@@ -410,11 +493,15 @@ function HomePage() {
           >
             Packaging Ritual
           </p>
-          <h2 className="mb-4 font-display" style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1.05 }}>
+          <h2
+            className="mb-4 font-display"
+            style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1.05 }}
+          >
             The details before it <em className="italic">ships</em>
           </h2>
           <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            Ribbons, labels, wax seals and finishing touches are chosen with the same care as the piece itself.
+            Ribbons, labels, wax seals and finishing touches are chosen with the same care as the
+            piece itself.
           </p>
         </div>
         <div className="reveal reveal-d2 mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
@@ -446,12 +533,22 @@ function HomePage() {
       </section>
 
       {/* COLLECTIONS */}
-      <section className="scroll-mt-32 px-6 py-20 md:px-12 md:py-24" style={{ background: "var(--cream-white)" }} id="collections">
+      <section
+        className="scroll-mt-32 px-6 py-20 md:px-12 md:py-24"
+        style={{ background: "var(--cream-white)" }}
+        id="collections"
+      >
         <div className="reveal mx-auto mb-14 max-w-xl text-center">
-          <p className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]" style={{ color: "var(--terra)" }}>
+          <p
+            className="mb-3.5 text-[10px] font-semibold uppercase tracking-[0.28em]"
+            style={{ color: "var(--terra)" }}
+          >
             Our Collections
           </p>
-          <h2 className="mb-4 font-display" style={{ fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1 }}>
+          <h2
+            className="mb-4 font-display"
+            style={{ fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1 }}
+          >
             Designs for Every
             <br />
             Celebration
@@ -513,7 +610,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SHOP ON ETSY — mobile lifestyle */}
+      {/* SHOP ON ETSY - mobile lifestyle */}
       <section className="px-6 py-24 md:px-12" style={{ background: "var(--cream)" }}>
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div className="reveal interactive-image-frame relative aspect-square overflow-hidden rounded-3xl">
@@ -533,13 +630,20 @@ function HomePage() {
             </p>
             <h2
               className="mb-5 font-display"
-              style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1.05, color: "var(--espresso)" }}
+              style={{
+                fontSize: "clamp(30px, 3.8vw, 48px)",
+                lineHeight: 1.05,
+                color: "var(--espresso)",
+              }}
             >
               Find us on <em className="italic">Etsy</em>
             </h2>
-            <p className="mb-7 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-              The full collection lives on our Etsy shop — browse, favorite and check out securely from anywhere. Every
-              order is professionally produced and shipped with care.
+            <p
+              className="mb-7 text-sm font-light leading-relaxed"
+              style={{ color: "var(--umber)" }}
+            >
+              The full collection lives on our Etsy shop — browse, favorite and check out securely
+              from anywhere. Every order is professionally produced and shipped with care.
             </p>
             <a
               href="https://www.etsy.com/shop/AHugDesign"
@@ -563,7 +667,10 @@ function HomePage() {
           >
             Follow the Studio
           </p>
-          <h2 className="mb-4 font-display" style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1 }}>
+          <h2
+            className="mb-4 font-display"
+            style={{ fontSize: "clamp(30px, 3.8vw, 48px)", lineHeight: 1 }}
+          >
             A peek at our <em className="italic">@ahugdesign</em>
           </h2>
           <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
@@ -589,7 +696,10 @@ function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all hover:-translate-y-px"
-            style={{ borderColor: "color-mix(in oklab, var(--sage) 50%, transparent)", color: "var(--sage-dark)" }}
+            style={{
+              borderColor: "color-mix(in oklab, var(--sage) 50%, transparent)",
+              color: "var(--sage-dark)",
+            }}
           >
             Follow @ahugdesign →
           </a>
@@ -598,7 +708,10 @@ function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             className="ml-0 mt-3 inline-flex items-center gap-2 rounded-full border px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all hover:-translate-y-px sm:ml-3 sm:mt-0"
-            style={{ borderColor: "color-mix(in oklab, var(--terra) 45%, transparent)", color: "var(--terra-dark)" }}
+            style={{
+              borderColor: "color-mix(in oklab, var(--terra) 45%, transparent)",
+              color: "var(--terra-dark)",
+            }}
           >
             Visit Facebook →
           </a>
@@ -630,13 +743,17 @@ function HomePage() {
           </p>
           <h2
             className="mb-5 font-display"
-            style={{ fontSize: "clamp(30px, 3.5vw, 46px)", lineHeight: 1.1, color: "var(--espresso)" }}
+            style={{
+              fontSize: "clamp(30px, 3.5vw, 46px)",
+              lineHeight: 1.1,
+              color: "var(--espresso)",
+            }}
           >
             A thank-you note, a soft wrap, a <em className="italic">little ceremony</em>
           </h2>
           <p className="mb-4 text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-            We want opening your order to feel personal — tissue, tags, stickers and handwritten warmth, all arranged
-            to feel thoughtful from the very first glance.
+            We want opening your order to feel personal — tissue, tags, stickers and handwritten
+            warmth, all arranged to feel thoughtful from the very first glance.
           </p>
           <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
             Small joys. Big hugs.
@@ -645,55 +762,94 @@ function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden">
+      <section className="final-cta-section relative overflow-hidden px-5 py-20 sm:px-6 md:px-12 md:py-24">
         <div className="absolute inset-0 gradient-final-cta" />
         <div className="absolute inset-0 bg-grain opacity-[0.06]" />
-        <div className="reveal relative z-10 px-8 text-center">
-          <p
-            className="mb-5 text-[10px] font-normal uppercase tracking-[0.3em]"
-            style={{ color: "rgba(245,240,232,0.65)" }}
-          >
-            Ready to celebrate?
-          </p>
-          <h2
-            className="font-display italic"
-            style={{
-              fontSize: "clamp(52px, 8vw, 96px)",
-              color: "var(--cream-white)",
-              lineHeight: 0.95,
-              letterSpacing: "0",
-            }}
-          >
-            Find a piece that
-          </h2>
-          <p
-            className="font-script mb-7 mt-1"
-            style={{
-              fontSize: "clamp(56px, 9vw, 110px)",
-              color: "rgba(245,240,232,0.95)",
-              lineHeight: 1,
-            }}
-          >
-            feels like home
-          </p>
-          <p
-            className="mx-auto mb-10 max-w-xl font-display italic"
-            style={{ fontSize: "clamp(16px, 2vw, 22px)", color: "rgba(245,240,232,0.7)" }}
-          >
-            Every piece is wrapped with intention and sent with warmth — because the way it arrives matters too.
-          </p>
-          <a
-            href="https://www.etsy.com/shop/AHugDesign"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-4 inline-flex items-center gap-2.5 rounded-full px-10 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] shadow-soft transition-all hover:-translate-y-0.5"
-            style={{ background: "var(--cream-white)", color: "var(--espresso)" }}
-          >
-            Shop on Etsy →
-          </a>
-          <p className="text-[11px] uppercase tracking-[0.1em]" style={{ color: "rgba(245,240,232,0.45)" }}>
-            Made to order through Etsy
-          </p>
+        <div className="final-cta-halo final-cta-halo-a" />
+        <div className="final-cta-halo final-cta-halo-b" />
+        <div className="final-cta-stitch final-cta-stitch-top" />
+        <div className="final-cta-stitch final-cta-stitch-bottom" />
+
+        <div className="reveal final-cta-panel relative z-10 mx-auto grid max-w-6xl gap-10 px-5 py-8 text-center sm:px-8 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-12 md:py-12 md:text-left">
+          <div>
+            <p
+              className="mb-5 text-[10px] font-semibold uppercase tracking-[0.28em]"
+              style={{ color: "rgba(245,240,232,0.72)" }}
+            >
+              Ready to gift something personal?
+            </p>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: "clamp(40px, 5.6vw, 78px)",
+                color: "var(--cream-white)",
+                lineHeight: 0.98,
+                letterSpacing: "0",
+              }}
+            >
+              Make it feel personal before they even open it.
+            </h2>
+            <p
+              className="font-script mb-6 mt-3"
+              style={{
+                fontSize: "clamp(44px, 6vw, 82px)",
+                color: "rgba(245,240,232,0.96)",
+                lineHeight: 0.95,
+              }}
+            >
+              wrapped with warmth
+            </p>
+            <p
+              className="mx-auto mb-8 max-w-xl text-sm font-light leading-relaxed md:mx-0 md:text-base"
+              style={{ color: "rgba(245,240,232,0.78)" }}
+            >
+              Thoughtful designs, made to order and finished with a soft unboxing moment - ready to
+              send through Etsy.
+            </p>
+            <div className="mb-9 flex flex-wrap items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.16em] md:justify-start">
+              {["Made to order", "Giftable details", "Etsy checkout"].map((item) => (
+                <span key={item} className="final-cta-pill rounded-full border px-4 py-2">
+                  {item}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://www.etsy.com/shop/AHugDesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="final-cta-button mb-4 inline-flex items-center gap-3 rounded-full px-9 py-4 text-[12px] font-semibold uppercase tracking-[0.14em] transition-all"
+            >
+              Shop on Etsy <span aria-hidden="true">-&gt;</span>
+            </a>
+            <p
+              className="text-[10px] uppercase tracking-[0.14em]"
+              style={{ color: "rgba(245,240,232,0.5)" }}
+            >
+              Made to order through Etsy
+            </p>
+          </div>
+
+          <div className="final-cta-gift-wrap relative mx-auto w-full max-w-md">
+            <div className="final-cta-gift-card">
+              <img
+                src={giftBoxImage}
+                alt="AHugDesign gift box with mug, soft wrap, flowers and a thank-you note"
+                className="final-cta-gift-image"
+              />
+              <div className="final-cta-photo-badge">
+                <span>Gift-ready details</span>
+                <strong>Small joys. Big hugs.</strong>
+              </div>
+            </div>
+            <div className="final-cta-steps" aria-hidden="true">
+              {["Choose", "Customize", "Gift"].map((item, index) => (
+                <span key={item}>
+                  <b>{index + 1}</b>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
@@ -712,18 +868,26 @@ function BPColumn({
   delay: string;
 }) {
   return (
-    <div className={`order-glass-card reveal ${delay} group rounded-2xl p-7 text-center md:p-8`}>
-      <div className="relative z-10">
-      <div className="mb-5 flex justify-center transition-transform duration-500 group-hover:-translate-y-1">{icon}</div>
-      <h3
-        className="mb-4 font-display italic"
-        style={{ fontSize: "clamp(22px, 2.5vw, 30px)", color: "var(--espresso)", lineHeight: 1.2 }}
-      >
-        {title}
-      </h3>
-      <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
-        {body}
-      </p>
+    <div
+      className={`order-glass-card reveal ${delay} group h-full rounded-2xl p-7 text-center md:min-h-[242px] md:p-8`}
+    >
+      <div className="relative z-10 flex h-full flex-col items-center">
+        <div className="mb-5 flex h-9 items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+          {icon}
+        </div>
+        <h3
+          className="mb-4 flex font-display italic md:min-h-[72px] md:items-center"
+          style={{
+            fontSize: "clamp(22px, 2.5vw, 30px)",
+            color: "var(--espresso)",
+            lineHeight: 1.2,
+          }}
+        >
+          {title}
+        </h3>
+        <p className="text-sm font-light leading-relaxed" style={{ color: "var(--umber)" }}>
+          {body}
+        </p>
       </div>
     </div>
   );
@@ -769,7 +933,10 @@ function CollectionCard({
 }) {
   const inner = (
     <>
-      <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" style={{ background: gradient }} />
+      <div
+        className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+        style={{ background: gradient }}
+      />
       {video && (
         <video
           src={video}
@@ -797,7 +964,10 @@ function CollectionCard({
       />
       <div
         className="absolute -left-1/2 top-0 h-full w-1/2 -skew-x-12 opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-45"
-        style={{ background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.34) 50%, transparent 100%)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.34) 50%, transparent 100%)",
+        }}
       />
       <div className="absolute inset-0 bg-grain opacity-[0.05]" />
       <span
@@ -845,7 +1015,9 @@ function CollectionCard({
     </>
   );
 
-  const ratio = featured ? "aspect-[1.12/1] sm:aspect-[760/468]" : "aspect-[1.08/1] sm:aspect-[4/5]";
+  const ratio = featured
+    ? "aspect-[1.12/1] sm:aspect-[760/468]"
+    : "aspect-[1.08/1] sm:aspect-[4/5]";
   const className = `reveal ${delay} group relative block ${ratio} overflow-hidden rounded-3xl border shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_70px_-34px_rgba(46,34,24,0.7)]`;
   const cardStyle = {
     borderColor: "rgba(255,255,255,0.34)",
@@ -873,4 +1045,3 @@ function CollectionCard({
     </a>
   );
 }
-
