@@ -562,9 +562,9 @@
 
   .final-cta-gift-card {
     position: relative;
-    aspect-ratio: 1.34 / 1;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 26px;
+    border-radius: 24px;
     border: 1px solid rgba(245, 240, 232, 0.28);
     background: rgba(245, 240, 232, 0.18);
     box-shadow:
@@ -612,15 +612,16 @@
 
   .final-cta-photo-badge {
     position: absolute;
-    left: 22px;
-    right: 22px;
-    bottom: 22px;
+    left: 20px;
+    right: auto;
+    bottom: 20px;
+    width: min(72%, 360px);
     z-index: 3;
     display: grid;
     gap: 6px;
     border: 1px solid rgba(245, 240, 232, 0.42);
     border-radius: 20px;
-    padding: 17px 18px;
+    padding: 14px 16px;
     color: var(--espresso);
     background: rgba(245, 240, 232, 0.72);
     box-shadow:
@@ -639,7 +640,7 @@
 
   .final-cta-photo-badge strong {
     font-family: var(--font-display);
-    font-size: clamp(25px, 3.4vw, 34px);
+    font-size: clamp(22px, 2.8vw, 30px);
     font-weight: 500;
     line-height: 0.98;
   }

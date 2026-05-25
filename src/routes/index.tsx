@@ -829,7 +829,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="final-cta-gift-wrap relative mx-auto w-full max-w-md">
+          <div className="final-cta-gift-wrap relative mx-auto w-full max-w-xl">
             <div className="final-cta-gift-card">
               <img
                 src={giftBoxImage}
