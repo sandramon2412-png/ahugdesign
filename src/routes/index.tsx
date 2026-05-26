@@ -49,12 +49,6 @@ function HomePage() {
         style={{ background: "oklch(0.22 0.018 50)" }}
       >
         <div className="hero-video-wrap absolute inset-0">
-          <img
-            src={studioShelvesImage}
-            alt=""
-            aria-hidden="true"
-            className="hero-poster absolute inset-0 h-full w-full object-cover"
-          />
           <video
             className="hero-video absolute inset-0 h-full w-full object-contain"
             autoPlay
@@ -62,7 +56,6 @@ function HomePage() {
             loop
             playsInline
             preload="auto"
-            poster={studioShelvesImage}
           >
             <source src={heroVideo} type="video/mp4" />
           </video>

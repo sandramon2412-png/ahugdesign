@@ -203,13 +203,8 @@
     font-family: var(--font-sans);
   }
 
-  .hero-poster {
-    filter: saturate(0.92) brightness(0.74);
-    transform: scale(1.02);
-  }
-
   .hero-video {
-    background-color: transparent;
+    background-color: oklch(0.22 0.018 50);
   }
 
   /* Reveal-on-scroll */
