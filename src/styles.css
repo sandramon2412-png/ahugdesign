@@ -203,6 +203,15 @@
     font-family: var(--font-sans);
   }
 
+  .hero-poster {
+    filter: saturate(0.92) brightness(0.74);
+    transform: scale(1.02);
+  }
+
+  .hero-video {
+    background-color: transparent;
+  }
+
   /* Reveal-on-scroll */
   .reveal {
     opacity: 0;
@@ -1116,6 +1125,7 @@
   .hero-section {
     min-height: 560px !important;
   }
+
   .hero-content {
     padding-top: 1rem;
   }
